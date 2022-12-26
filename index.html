@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<div class="hat"><img
+        src="https://static8.depositphotos.com/1000792/934/v/600/depositphotos_9344763-stock-illustration-cheerful-cartoon-apple-character.jpg"
+        alt="" style="max-width:100%; height:100px">
+    <button class="buy">купити</button>
+</div>
+
+<form action="#" id="myForm">
+    <div class="form_input">
+        <input type="text" id="fio" name="initials" placeholder="ПІБ покупця">
+    </div>
+    <div class="form_input">
+        <select name="select">
+            <option value="Дніпро" selected>Дніпро</option>
+            <option value="Київ">Київ</option>
+            <option value="Львів">Львів</option>
+            <option value="Запоріжжя">Запоріжжя</option>
+            <option value="Харків">Харків</option>
+        </select>
+    </div>
+    <div class="form_input">
+        <input list="newpostNumber" name="number" placeholder="виберіть відділення">
+        <datalist id="newpostNumber">
+            <option value="21">
+            <option value="35">
+            <option value="45">
+            <option value="58">
+            <option value="67">
+        </datalist>
+    </div>
+    <div class="form_input">
+        <input type="radio" name="myMethod" checked value="Післяплати">
+        Післяплати
+    </div>
+    <div class="form_input">
+        <input type="radio" name="myMethod" value="Оплата банківською карткою">Оплата банківською карткою
+    </div>
+    <div class="form_input">
+        <input type="range" id="vol" name="rangeValue" min="0" max="50" value="0">
+        <output id="rangeCount">0: Кількість продукції</output>
+    </div>
+
+    <div class="form_input"><textarea id="story" name="story" style="width:300px; height:150px"
+            placeholder="Коментар до замовлення ...">
+</textarea></div>
+    <div>
+        <input type="submit" class="area">
+    </div>
+
+</form>
+<div class="bringOut"></div>
+
+<body>
+    <script src="./main.js"></script>
+</body>
+
+</html>

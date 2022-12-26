@@ -1,0 +1,53 @@
+#vol {
+    vertical-align: bottom;
+
+}
+
+#rangeCount {
+    vertical-align: top;
+}
+
+.hat {
+    display: flex;
+    align-items: flex-end;
+}
+
+.hat button,
+.area {
+    width: 150px;
+    height: 25px;
+    margin-left: 20px;
+}
+
+#myForm {
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+}
+
+#myForm label,
+div {
+    margin-bottom: 20px;
+}
+
+.form_input {
+    position: relative;
+}
+
+
+.error-lable {
+    position: absolute;
+    left: 3px;
+    bottom: -16px;
+    font-size: 13px;
+    color: red;
+}
+
+.showRange {
+    font-size: 22px;
+}
+
+.error input,
+.error textarea {
+    border: 1px solid red;
+}
