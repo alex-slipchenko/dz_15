@@ -1,9 +1,11 @@
 
 const out = document.querySelector('.bringOut');
 const MyDiv = document.querySelectorAll('.form_input');
-document.querySelector('.buy').onclick = () => {
+
+document.querySelector('.buy').addEventListener('click', () => {
     document.querySelector('#myForm').style.display = 'flex';
-}
+})
+
 
 vol.addEventListener('input', () => rangeCount.value = `${vol.value}${': Кількість продукції'}`);
 function myValid(form) {
@@ -45,14 +47,32 @@ function myValid(form) {
         // проверка на нечисло в ФИО=============
         if (!isNaN(myBio.value) && myBio.value) {
             removeError(myBio);
-            createError(myBio, 'Введите пожалуста свои данные вы ввели число');
+            createError(myBio, 'Введите коректно свои данные Вы ввели число');
+            rezult = false;
+        } else if (!/^(\s?[А-ЯІЇЄ][а-яіїє]+){3}$/.test(myBio.value)) {
+            removeError(myBio);
+            createError(myBio, 'Введите свои ФИО корректно');
             rezult = false;
         }
-        if (myRange.value == '0') {
-            removeError(myRange);
-            createError(myRange, 'Выберите пожалуйста количество');
+        // проверка на email=============
+        if (!/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/.test(myEmail.value)) {
+            removeError(myEmail);
+            createError(myEmail, 'Введите существующий адрес почты');
             rezult = false;
         }
+
+        // проверка на телефон=============
+        console.log(myPhone.value);
+        const phoneRegexp = /^([()]?\d( |-)?\d( |-)?\d( |-)?[()]?\d( |-)?\d( |-)?\d( |-)?\d( |-)?\d( |-)?\d( |-)?\d( |-)?)|(\+?\d{2}[()]?\d{3}( |-)?[()]?\d( |-)?\d( |-)?\d( |-)?\d( |-)?\d( |-)?\d( |-)?\d( |-)?)$/;
+        if (!phoneRegexp.test(myPhone.value)) {
+            removeError(myPhone);
+            createError(myPhone, 'Укажите правильно телефон');
+            rezult = false;
+        }
+
+
+
+        // проверка на yTextArea=============
         if (myTextArea.value.length < 10 && myTextArea.value.length > 0) {
             removeError(myTextArea);
             createError(myTextArea, `Минимальная длинна от 10 символов,Вы ввели всего: ${myTextArea.value.length}`);
@@ -69,6 +89,8 @@ const myFio = document.querySelector('input');
 const mySelect = document.querySelector('.form_input select');
 const myPost = document.querySelector('.form_input input[name="number"]');
 const myRadioBut = document.querySelectorAll('.form_input input[name="myMethod"]');
+const myEmail = document.querySelector('.form_input input[name="myEmail"]');
+const myPhone = document.querySelector('.form_input input[name="myPhone"]');
 const myRange = document.querySelector('#vol');
 const myTextArea = document.querySelector('#story');
 
